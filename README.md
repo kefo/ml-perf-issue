@@ -16,6 +16,13 @@ And modify it as needed to enter your ML (admin) username and password and
 database of choice, if not the Documents database, and authentication method,
 again if necessary.
 
+Then...
+~~~bash
+./load_data
+~~~
+
+And run the tests, for which see below.
+
 # Tests
 
 - [filter_query_good](queries/filter_query_good.sparql)
@@ -83,3 +90,15 @@ that removing those two lines from the SPARQL query could improve performance
 substantially over the "bad" query.  Though those lines appear to have no bearing 
 on the real culprit - the 'values' section - it was striking that eliminating those
 conditions would improve the performance in AWS ML9 by as much as it did. (See results)
+
+# Cleaning up
+
+~~~bash
+./cleanup_source_data
+~~~
+Simply deletes unnecessary data from disk.
+
+~~~bash
+./delete_data
+~~~
+Removes the graph from the database.

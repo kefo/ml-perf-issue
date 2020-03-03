@@ -1,0 +1,23 @@
+PREFIX madsrdf: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            
+SELECT DISTINCT ?uri ?relation ?s
+WHERE {
+    $resource_uri skos:inScheme ?scheme .
+    $resource_uri skos:inScheme ?scheme2 .
+
+    ?s ?relation $resource_uri .
+    VALUES ?relation {  
+        madsrdf:hasExactExternalAuthority 
+        # madsrdf:hasCloseExternalAuthority  # Uncomment this line and the next one, and there will be no change to how this runs.  Compare to note in better_but
+        # skos:broader 
+        # skos:narrower 
+        skos:related 
+    } .
+    ?s skos:inScheme ?scheme .
+    ?s skos:inScheme ?scheme2 .
+
+    BIND($resource_uri as ?uri) . 
+}

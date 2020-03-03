@@ -1,0 +1,23 @@
+PREFIX madsrdf: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            
+SELECT DISTINCT ?uri ?relation ?related ?label ?alabel
+WHERE {
+    $resource_uri ?relation ?o .
+    ?o skos:prefLabel ?label .
+    $resource_uri skos:inScheme ?scheme .
+    ?related skos:prefLabel ?label .
+
+    ?related skos:prefLabel ?alabel . 
+    ?related skos:inScheme ?scheme .
+    FILTER(isURI(?related)) .
+    
+    # One FILTER like this is fine.  Two or more, bad.
+    FILTER(?scheme != <http://id.loc.gov/authorities/names/collection_LCNAF>) .
+            
+    FILTER(?o != ?related) .
+
+    BIND($resource_uri as ?uri) .
+}

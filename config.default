@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+MLUSER=
+MLPASS=
+MLHOST=localhost
+MLPORT=8000
+GRAPHURI=info:lc/ml-perf-test
+
+REQUESTS=500
+
+QUERY=queries/$1.sparql
+
+############
+############

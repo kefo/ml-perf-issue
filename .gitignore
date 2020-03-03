@@ -1,0 +1,4 @@
+config
+data/*.nt
+data/*.zip
+

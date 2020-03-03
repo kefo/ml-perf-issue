@@ -19,11 +19,11 @@ input="data/uris.txt"
 while read -r line
 do
   echo "$line"
-  curl -s --digest --user "$MLUSER:$MLPASS" -X POST \
+  curl -s $AUTHMETHOD --user "$MLUSER:$MLPASS" -X POST \
     --data-binary @$QUERY \
     -H "Content-type: application/sparql-query" \
     -H "Accept: application/sparql-results+xml" \
-    http://localhost:8000/v1/graphs/sparql?bind:resource_uri=$line
+    "http://localhost:8000/v1/graphs/sparql?database=$DB&bind:resource_uri=$line"
   echo ""
   COUNT=$(($COUNT + 1))
   if [ "$COUNT" -gt "$REQUESTS" ]

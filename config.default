@@ -5,6 +5,8 @@ MLPASS=
 MLHOST=localhost
 MLPORT=8000
 GRAPHURI=info:lc/ml-perf-test
+DB=Documents
+AUTHMETHOD=--digest
 
 REQUESTS=500
 

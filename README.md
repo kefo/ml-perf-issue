@@ -6,7 +6,7 @@ cd ml-perf-issue
 ./get_source_data
 ~~~
 
-At this point you will need to modify at least one file to get going, but see the below first:
+At this point you will need to modify at least one file to get going:
 
 ~~~bash
 cp config.default config
@@ -37,15 +37,12 @@ And run the tests, for which see below.
 ~~~bash
 time ./perf_test filter_query_good
 ~~~
-
 ~~~bash
 time ./perf_test filter_query_bad
 ~~~
-
 ~~~bash
 time ./perf_test values_query_good
 ~~~
-
 ~~~bash
 time ./perf_test values_query_bad
 ~~~
@@ -69,7 +66,7 @@ well but which are not.
 
 The `filter_query` demonstrates that, in AWS on ML9, two FILTER statements that seek
 to filter out unwanted hits performs poorly (the 'bad' one) but when you either remove the 
-FILTER or reduce the number to a single FILTER, (the 'good' one) then the queries 
+FILTER or reduce the number to a single FILTER (the 'good' one) then the queries 
 perform as expected.
 
 # About `values_query`
@@ -77,7 +74,7 @@ perform as expected.
 The `values_query` requires some background/understanding of the data.  Review 
 the SPARQL queries first. 
 
-Nearlyevery resource in the dataset will have a `skos:broader` relationship.  Nearly 
+Nearly every resource in the dataset will have a `skos:broader` relationship.  Nearly 
 every resource in the dataset will have one or more - and in some cases MANY - 
 `skos:narrower` relationships.  Far fewer resources will have the other relationships
 seen in the sparql query and a good many (probably the vast majority) will have 

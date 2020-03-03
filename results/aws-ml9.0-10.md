@@ -1,11 +1,11 @@
 # Specs
 
-AWS VPC
-3-node ML cluster
-Instance types: r5.4xlarge
-    Memory (per instance): 128GB
-    VCPUS (per instance): 16
-ML Version: 9.0-10
+- AWS VPC
+- 3-node ML cluster
+- Instance types: r5.4xlarge
+    - Memory (per instance): 128GB
+    - VCPUS (per instance): 16
+- ML Version: 9.0-10
 
 Data loaded into a one-forest database.  Tests executed on localhost of that
 forest.

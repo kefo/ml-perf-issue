@@ -18,14 +18,12 @@ again if necessary.
 
 # Tests
 
-- filter_query_good
-- filter_query_bad
+- [filter_query_good](queries/filter_query_good.sparql)
+- [filter_query_bad](queries/filter_query_bad.sparql)
 
-- values_query_good
-- values_query_bad
-- values_query_better_but
-
-You can review the sparql queries in the `queries` directory.
+- [values_query_good](queries/values_query_good.sparql)
+- [values_query_bad](queries/values_query_bad.sparql)
+- [values_query_better_but](queries/values_query_better_but.sparql)
 
 # Sample commands
 
@@ -47,8 +45,8 @@ time ./perf_test values_query_bad
 
 # Results
 
-    (AWS ML9.0-10)[results/aws-ml9.0-10.md]
-    (LC ML8.0-7.1)[results/lc-ml8.0-7.1.md]
+- [AWS ML9.0-10](results/aws-ml9.0-10.md)
+- [LC ML8.0-7.1](results/lc-ml8.0-7.1.md)
 
 # Notes
 

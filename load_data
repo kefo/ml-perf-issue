@@ -7,22 +7,22 @@ source $DIR/config
 echo "Loading LCSH."
 curl -s -X POST --data-binary '@data/lcsh_truncated.skos.nt' \
     -H "Content-type: application/n-triples" \
-    --digest --user "$MLUSER:$MLPASS" \
-    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI"
+    $AUTHMETHOD --user "$MLUSER:$MLPASS" \
+    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI&database=$DB"
 echo "Finished loading LCSH."
 
 echo "Loading LCSH amended."
 curl -s -X POST --data-binary '@data/lcsh_truncated_amended.skos.nt' \
     -H "Content-type: application/n-triples" \
-    --digest --user "$MLUSER:$MLPASS" \
-    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI"
+    $AUTHMETHOD --user "$MLUSER:$MLPASS" \
+    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI&database=$DB"
 echo "Finished loading LCSH amended."
 
 echo "Loading external relationships."
 curl -s -X POST --data-binary '@data/external_links.nt' \
     -H "Content-type: application/n-triples" \
-    --digest --user "$MLUSER:$MLPASS" \
-    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI"
+    $AUTHMETHOD --user "$MLUSER:$MLPASS" \
+    "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI&database=$DB"
 echo "Finished loading external relationships."
 
 echo

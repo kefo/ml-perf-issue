@@ -1,11 +1,11 @@
 # Specs
 
-LC, VMs
-3-node ML cluster
-Instance types: r5.4xlarge
-    Memory (per box): 64GB
-    CPUS (per box): 8
-ML Version: 8.0-7.1
+- LC, VMs
+- 3-node ML cluster
+- VM details: 
+    - Memory (per box): 64GB
+    - CPUS (per box): 8
+- ML Version: 8.0-7.1
 
 Data loaded into a one-forest database.  Tests executed on localhost of that
 forest.

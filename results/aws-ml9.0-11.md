@@ -26,6 +26,9 @@ sys     0m1.150s
 2)
 ~~~bash
 $ time ./perf_test filter_query_bad
+real    15m32.626s
+user    0m2.562s
+sys     0m1.609s
 ~~~
 
 

@@ -17,6 +17,9 @@ Truncated LCSH to the first 5 million lines (to speed up load times for increase
 1)
 ~~~bash
 $ time ./perf_test filter_query_good
+real    15m53.212s
+user    0m2.193s
+sys     0m1.150s
 ~~~
 
 

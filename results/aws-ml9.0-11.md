@@ -1,0 +1,53 @@
+# Specs
+
+- Single node
+- VM details: 
+    - Memory: 32GB
+    - CPUS: 4
+- ML Version: 10.0-3
+
+Data loaded into a one-forest database.  Tests executed on localhost of that
+forest.
+
+Truncated LCSH to the first 5 million lines (to speed up load times for increased testing).
+
+# Runs
+
+
+1)
+~~~bash
+$ time ./perf_test filter_query_good
+~~~
+
+
+2)
+~~~bash
+$ time ./perf_test filter_query_bad
+~~~
+
+
+3)
+~~~bash
+$ time ./perf_test values_query_good
+real    0m4.236s
+user    0m1.627s
+sys     0m1.030s
+~~~
+
+
+4)
+~~~bash
+$ time ./perf_test values_query_bad
+real    0m3.469s
+user    0m1.605s
+sys     0m1.050s
+~~~
+
+
+5)
+~~~bash
+$ time ./perf_test values_query_better_but
+real    0m3.401s
+user    0m1.711s
+sys     0m0.947s
+~~~

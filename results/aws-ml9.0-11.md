@@ -4,7 +4,7 @@
 - VM details: 
     - Memory: 32GB
     - CPUS: 4
-- ML Version: 10.0-3
+- ML Version: 9.0-11
 
 Data loaded into a one-forest database.  Tests executed on localhost of that
 forest.

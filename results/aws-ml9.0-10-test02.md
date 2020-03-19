@@ -29,11 +29,9 @@ sys     0m1.163s
 2)
 ~~~bash
 $ time ./perf_test filter_query_bad
-real    15m32.626s
-user    0m2.562s
-sys     0m1.609s
+?
 ~~~
-
+I let this run for 44 minutes and then killed it.
 
 3)
 ~~~bash

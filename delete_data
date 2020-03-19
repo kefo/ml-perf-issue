@@ -6,7 +6,7 @@ source $DIR/config
 
 echo
 echo "Deleting graph: $GRAPHURI"
-curl -X DELETE --digest --user "$MLUSER:$MLPASS" \
+curl -X DELETE $AUTHMETHOD --user "$MLUSER:$MLPASS" \
     "http://$MLHOST:$MLPORT/v1/graphs?graph=$GRAPHURI"
 echo "Finished deleting graph: $GRAPHURI"
 echo

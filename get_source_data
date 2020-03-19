@@ -7,7 +7,7 @@ cd $DIR/data
 echo
 echo "Fetching LCSH."
 curl -OL http://id.loc.gov/static/data/downloads/lcsh.skos.nt.zip
-echo "Unpacking LCSH."
+cho "Unpacking LCSH."
 unzip lcsh.skos.nt.zip
 
 echo "Fetching external relationships."
@@ -17,8 +17,9 @@ unzip externallinks.nt.zip
 
 echo "Creating amended file."
 # sed '1000000,12000000d' lcsh.skos.nt > lcsh_truncated.skos.nt
-cp lcsh.skos.nt lcsh_truncated.skos.nt
+# cp lcsh.skos.nt lcsh_truncated.skos.nt
 #cp lcsh_truncated.skos.nt lcsh_tmp.skos.nt
+head -n 5000000 lcsh.skos.nt > lcsh_truncated.skos.nt
 #sed 's/\/subjects\//\/lcsh\//g' lcsh_tmp.skos.nt > lcsh_truncated_amended.skos.nt
 sed 's/\/subjects\//\/lcsh\//g' lcsh_truncated.skos.nt > lcsh_truncated_amended.skos.nt
 echo "Finished creating amended file."

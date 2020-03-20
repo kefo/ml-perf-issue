@@ -1,7 +1,8 @@
 # Specs
 
 - Single node
-- VM details: 
+- Instace type: r5.xlarge
+- Instance details: 
     - Memory: 32GB
     - CPUS: 4
 - ML Version: 9.0-6

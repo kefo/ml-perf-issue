@@ -7,7 +7,7 @@ cd $DIR/data
 echo
 echo "Fetching LCSH."
 curl -OL http://id.loc.gov/static/data/downloads/lcsh.skos.nt.zip
-cho "Unpacking LCSH."
+echo "Unpacking LCSH."
 unzip lcsh.skos.nt.zip
 
 echo "Fetching external relationships."

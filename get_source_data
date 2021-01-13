@@ -6,12 +6,12 @@ cd $DIR/data
 
 echo
 echo "Fetching LCSH."
-curl -OL http://id.loc.gov/static/data/downloads/lcsh.skos.nt.zip
+curl -OL https://lds-downloads.s3.amazonaws.com/lcsh.skos.nt.zip
 echo "Unpacking LCSH."
 unzip lcsh.skos.nt.zip
 
 echo "Fetching external relationships."
-curl -OL http://id.loc.gov/static/data/downloads/externallinks.nt.zip
+curl -OL https://lds-downloads.s3.amazonaws.com/externallinks.nt.zip
 echo "Unpacking external relationships."
 unzip externallinks.nt.zip
 
@@ -26,4 +26,3 @@ echo "Finished creating amended file."
 echo
 
 cd $DIR
-
